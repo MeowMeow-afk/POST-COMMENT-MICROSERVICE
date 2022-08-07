@@ -13,11 +13,12 @@ app.use(
   })
 );
 
-const posts = {
-  1: { title: "yash" },
-  2: { title: "yash chauhan" },
-  3: { title: "rana" },
-};
+const posts = {};
+// {
+//   1: { title: "yash" },
+//   2: { title: "yash chauhan" },
+//   3: { title: "rana" },
+// };
 
 app.get("/posts", (req, res) => {
   res.send({

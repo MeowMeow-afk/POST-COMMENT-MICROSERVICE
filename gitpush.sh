@@ -1,2 +1,2 @@
 git add .
-git commit -m "event buss integrated with query service"
+git commit -m "query service integrated with front-end"
