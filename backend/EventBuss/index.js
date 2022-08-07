@@ -14,6 +14,8 @@ app.use(
   })
 );
 
+const events = [];
+
 const services = {
   posts: "http://localhost:4000/events",
   comments: "http://localhost:4001/events",
@@ -21,6 +23,7 @@ const services = {
 };
 app.post("/events", async (req, res) => {
   const { event } = req.body;
+  events.push(event);
   try {
     // await axios.post(services.posts, event);
     // await axios.post(services.comments, event);
@@ -29,6 +32,10 @@ app.post("/events", async (req, res) => {
     console.log("error", error);
   }
   res.send({ ok: "event emmited from eventbuss" });
+});
+
+app.get("/events", async (req, res) => {
+  res.send({ events });
 });
 
 app.listen(4002, () => console.log("Event Buss listening at 4002"));
