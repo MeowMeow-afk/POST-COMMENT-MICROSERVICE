@@ -1,2 +1,2 @@
 git add .
-git commit -m "setup client with postList component, backend setup with post and comment service"
+git commit -m "front end connected with posts and comments micro service and eventbuss added (no implementation)"

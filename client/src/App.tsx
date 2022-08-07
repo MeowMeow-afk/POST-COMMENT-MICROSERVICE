@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './aoo.css';
-import { PostList } from '@Components';
+import { CreatePost, PostList } from '@Components';
 
 const App = () => (
   <div>
-    <PostList />
+    <CreatePost />
+    <h2>Post List:</h2>
+    <Suspense fallback="fetching">
+      <PostList />
+    </Suspense>
   </div>
 );
 

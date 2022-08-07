@@ -27,6 +27,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
+    'operator-linebreak': 'off',
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
