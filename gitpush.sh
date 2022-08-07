@@ -1,2 +1,2 @@
 git add .
-git commit -m "front end connected with posts and comments micro service and eventbuss added (no implementation)"
+git commit -m "event buss fully setup with posts and comments microservice"
