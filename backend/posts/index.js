@@ -30,6 +30,7 @@ app.get("/posts", (req, res) => {
 
 app.post("/events", (req, res) => {
   const data = req.body;
+  console.log("data from event buss to post service", data);
   res.status(200).send({ ok: "post service recieved data" });
 });
 

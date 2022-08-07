@@ -6,19 +6,25 @@ const app = express();
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http://localhost:4000", "http://localhost:4001"],
+    origin: [
+      "http://localhost:4000",
+      "http://localhost:4001",
+      "http://localhost:4003",
+    ],
   })
 );
 
 const services = {
   posts: "http://localhost:4000/events",
   comments: "http://localhost:4001/events",
+  query: "http://localhost:4003/events",
 };
 app.post("/events", async (req, res) => {
   const { event } = req.body;
   try {
-    await axios.post(services.posts, event);
-    await axios.post(services.comments, event);
+    // await axios.post(services.posts, event);
+    // await axios.post(services.comments, event);
+    await axios.post(services.query, event);
   } catch (error) {
     console.log("error", error);
   }
