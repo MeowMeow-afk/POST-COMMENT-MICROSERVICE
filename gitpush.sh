@@ -1,3 +1,3 @@
 git add .
-git commit -m "backend integrated with docker"
+git commit -m "helper script for managing docker containers and images added in root"
 # git push -u origin main
