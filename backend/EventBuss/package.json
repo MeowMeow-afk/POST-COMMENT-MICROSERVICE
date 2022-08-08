@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dockerImage": "docker build -t eventBus .",
+    "dockerStart": "docker run -d -p 4002:4002 --name eventbus-container eventBus",
+    "dockerBuildAndRun": "npm run dockerImage && npm run dockerStart"
   },
   "keywords": [],
   "author": "",

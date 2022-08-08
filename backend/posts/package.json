@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dockerImage": "docker build -t posts .",
+    "dockerStart": "docker run -d -p 4000:4000 --name posts-container posts",
+    "dockerBuildAndRun": "npm run dockerImage && npm run dockerStart"
   },
   "keywords": [],
   "author": "",

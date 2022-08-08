@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const axios = require("axios");
 const app = express();
+const PORT = process.env.PORT || 4003;
 
 app.use(cors({ origin: ["http://localhost:3000", "http://localhost:4002"] }));
 app.use(bodyParser.json());
@@ -19,7 +20,7 @@ app.get("/getAllPost", (req, res) => {
   res.send({ data: Object.values(queryData) });
 });
 
-app.listen(4003, async () => {
+app.listen(PORT, async () => {
   console.log("query server listening to port 4003");
   // handle any unhandled event stored in event bus queue while the query service was down
   try {

@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dockerImage": "docker build -t comments .",
+    "dockerStart": "docker run -d -p 4001:4001 --name comment-container comments",
+    "dockerBuildAndRun": "npm run dockerImage && npm run dockerStart"
   },
   "keywords": [],
   "author": "",

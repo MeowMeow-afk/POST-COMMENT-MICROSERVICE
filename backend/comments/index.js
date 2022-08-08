@@ -5,6 +5,7 @@ const cors = require("cors");
 const axios = require("axios");
 
 const app = express();
+const PORT = process.env.PORT || 4001;
 app.use(bodyParser.json());
 app.use(
   cors({
@@ -61,6 +62,6 @@ app.post("/posts/:id/comments", async (req, res) => {
 });
 const isValidContent = (content) => !!content;
 
-app.listen(4001, () => {
+app.listen(PORT, () => {
   console.log("comment service running on port 4001");
 });

@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const axios = require("axios");
 const app = express();
+const PORT = process.env.PORT || 4002;
+
 app.use(bodyParser.json());
 app.use(
   cors({
@@ -38,4 +40,4 @@ app.get("/events", async (req, res) => {
   res.send({ events });
 });
 
-app.listen(4002, () => console.log("Event Buss listening at 4002"));
+app.listen(PORT, () => console.log("Event Buss listening at 4002"));
